@@ -1,12 +1,42 @@
-import Navbar from "./components/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 import TaskList from "./pages/TaskList";
+
+import PrivateRoute from "./components/PrivateRoute";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
+
       <Navbar />
-      <TaskList />
-    </>
+
+      <Routes>
+
+        <Route
+          path="/login"
+          element={<LoginPage />}
+        />
+
+        <Route
+          path="/register"
+          element={<RegisterPage />}
+        />
+
+        <Route
+          path="/"
+          element={
+            <PrivateRoute>
+              <TaskList />
+            </PrivateRoute>
+          }
+        />
+
+      </Routes>
+
+    </BrowserRouter>
   );
 }
 
