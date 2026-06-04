@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "/api/auth";
+const API_URL =
+  "https://task-management-app-kbv0.onrender.com/api/auth";
 
 export const registerUser = async (userData) => {
   const response = await axios.post(
