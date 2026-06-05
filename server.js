@@ -3,18 +3,15 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 
-app.use(cors());
-
-const taskRoutes = require("./routes/taskRoutes");
-
-const userRoutes = require("./routes/userRoutes");
-
 dotenv.config();
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+const taskRoutes = require("./routes/taskRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 app.use("/api/tasks", taskRoutes);
 app.use("/api/auth", userRoutes);
