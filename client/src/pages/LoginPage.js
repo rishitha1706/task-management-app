@@ -53,4 +53,11 @@ function LoginPage() {
   );
 }
 
+<p className="mt-3">
+  Don't have an account?{" "}
+  <a href="/register">
+    Sign Up
+  </a>
+</p>
+
 export default LoginPage;

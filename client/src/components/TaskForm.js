@@ -25,7 +25,7 @@ function TaskForm() {
       window.location.reload();
     } catch (error) {
       console.log(error);
-      alert("Error adding task");
+      alert("Server unavailable. Please try again later.");
     }
   };
 
